@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Cinematography & Editing</title>
+    <style>
+        :root {
+            --netflix-red: #E50914;
+            --bg-black: #050505;
+            --card-gray: #181818;
+            --text-white: #ffffff;
+        }
+
+        body {
+            background-color: var(--bg-black);
+            color: var(--text-white);
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        /* Hero / Billboard Section */
+        .hero {
+            position: relative;
+            height: 85vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            background: linear-gradient(to right, rgba(0,0,0,0.8) 20%, transparent 80%);
+        }
+
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            opacity: 0.6;
+        }
+
+        .hero-content {
+            margin-left: 5%;
+            max-width: 600px;
+            z-index: 2;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(3rem, 8vw, 5rem);
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+            font-weight: 900;
+        }
+
+        .hero-tagline {
+            font-size: 1.2rem;
+            margin: 10px 0 25px 0;
+            color: #aaa;
+        }
+
+        .btn-play {
+            background: white;
+            color: black;
+            padding: 12px 35px;
+            border-radius: 4px;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            transition: 0.2s;
+        }
+
+        .btn-play:hover { background: rgba(255,255,255,0.8); }
+
+        /* Row Container */
+        .row {
+            padding: 40px 0 40px 5%;
+            margin-top: -100px; /* Pulls rows up over hero gradient */
+        }
+
+        .row-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .row-inner {
+            display: flex;
+            overflow-x: auto;
+            gap: 10px;
+            padding: 20px 0;
+            scrollbar-width: none; /* Firefox */
+        }
+
+        .row-inner::-webkit-scrollbar { display: none; }
+
+        /* Project Cards */
+        .card {
+            min-width: 300px;
+            aspect-ratio: 16 / 9;
+            background-color: var(--card-gray);
+            border-radius: 4px;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .card:hover {
+            transform: scale(1.15);
+            z-index: 10;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        }
+
+        .card-meta {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 15px;
+            background: linear-gradient(transparent, rgba(0,0,0,0.9));
+            opacity: 0;
+            transition: 0.3s;
+            font-size: 0.8rem;
+        }
+
+        .card:hover .card-meta { opacity: 1; }
+
+        .specs { color: #46d369; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="your-cinematic-reel.mp4" type="video/mp4">
+        </video>
+        
+        <div class="hero-content">
+            <h1>YOUR NAME</h1>
+            <p class="hero-tagline">Cinematographer • Editor • Visual Storyteller</p>
+            <a href="#reel" class="btn-play">▶ View Showreel</a>
+        </div>
+    </section>
+
+    <section class="row">
+        <div class="row-title">Narrative & Cinematic Projects</div>
+        <div class="row-inner">
+            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=600&q=80');">
+                <div class="card-meta">
+                    <div class="specs">98% Match</div>
+                    <div><b>The Midnight Drive</b><br>Shot on RED • 85mm Prime</div>
+                </div>
+            </div>
+            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=600&q=80');">
+                <div class="card-meta">
+                    <div class="specs">New Release</div>
+                    <div><b>Golden Hour</b><br>Cinematic Lighting Study</div>
+                </div>
+            </div>
+            <div class="card" style="background-image: url('https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=600&q=80');">
+                <div class="card-meta">
+                    <div class="specs">ProRes 422</div>
+                    <div><b>Urban Noir</b><br>Color Grading Portfolio</div>
+                </div>
+            </div>
+             </div>
+    </section>
+
+</body>
+</html>
